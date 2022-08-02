@@ -9,7 +9,6 @@ if (operacion == "USD") {
     let tc = parseFloat(prompt("Ingresar Tasa de Cambio"));
     let resultado = montoDolares(pesos, tc);
     console.log(`El monto ingresado: ${pesos} equivale a USD: ${resultado}`); 
-
 } else if (operacion == "ARS") {
     let dolares = parseFloat(prompt("Ingresar el Monto en Dolares "));
     let tc = parseFloat(prompt("Ingresar Tasa de Cambio"));
@@ -18,8 +17,6 @@ if (operacion == "USD") {
 } else {
     alert("Opción incorrecta. Intentar nuevamente");
 }
-
-
 
 // Funciones (se hicieron primero para luego pasarlas a funciones flecha)
 
