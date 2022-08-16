@@ -42,3 +42,13 @@ nav {
         }
     }
 }
+
+#agregarForm, #eliminarForm {
+    display: flex;
+    justify-content: flex-end;
+    align-items:flex-end;
+}
+
+#agregarProy {
+    margin-bottom: 50px;
+}

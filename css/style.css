@@ -42,4 +42,14 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: rgb(95, 24, 24);
+}
+
+#agregarForm, #eliminarForm {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+#agregarProy {
+  margin-bottom: 50px;
 }/*# sourceMappingURL=style.css.map */
