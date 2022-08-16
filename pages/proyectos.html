@@ -24,18 +24,17 @@
                     <nav class="bar">
                         <span>MAG Track</span>
                         <ul>
-                            <li type="button"><a href="../index.html">Inicio</li></a>
                             <li type="button"><a href="../pages/proyectos.html">Proyectos</li></a>
                             <li type="button"><a href="#">Conversor</li></a>
-                            <li type="button"><a href="#">Logout</li></a>
+                            <li type="button"><a href="../index.html">Logout</li></a>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-    <section>
-        <div class="container-fluid">
+    <section id="tablaProyectosConectividad">
+        <div class="container ">
             <h1>Listado de Proyectos</h1>
             <div class="row">
                 <div class="col-sm-12">
@@ -43,43 +42,43 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                <th>Nro.</th>
-                                <th>Expediente</th>
-                                <th>Cliente</th>
-                                <th>Tipo Red</th>
-                                <th>Monto</th>
+                                    <th>Nro.</th>
+                                    <th>Expediente</th>
+                                    <th>Cliente</th>
+                                    <th>Tipo Red</th>
+                                    <th>Monto</th>
                                 </tr>
                             </thead>
                             <tbody id="items">
-                                
+
                             </tbody>
                         </table>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
     <section id="agregarProy">
-        <div class="container-fluid">
+        <div class="container">
             <h2>Agregar Proyecto</h2>
             <p>Deberá ingresar los siguientes datos para agregar un proyecto</p>
             <div class="row">
-                <form id="agregarForm" method="GET" enctype="multipart/form-data" class="row g-3">
+                <form id="agregarForm" method="GET" enctype="multipart/form-data" class="row g-3" action="">
                     <div class="col-md-1">
                         <label for="agregarNro" class="form-label">Número</label>
-                        <input type="text" class="form-control" id="agregarNro" required>
+                        <input type="number" class="form-control" value="" id="agregarNro" required>
                     </div>
                     <div class="col-md-3">
                         <label for="agregarExp" class="form-label">Expediente</label>
-                        <input type="text" class="form-control" id="agregarExp" required>
+                        <input type="text" class="form-control" value="" id="agregarExp" required>
                     </div>
                     <div class="col-md-2">
                         <label for="agregarClient" class="form-label">Cliente</label>
-                        <input type="text" class="form-control" id="agregarClient" required>
+                        <input type="text" class="form-control" value="" id="agregarClient" required>
                     </div>
                     <div class="col-md-2">
                         <label for="agregarRed" class="form-label">Tipo Red</label>
                         <select class="form-select" id="agregarRed" type="text" required>
-                            <option selected>Seleccionar...</option>
+                            <option selected value="">Seleccionar...</option>
                             <option value="FTTH">FTTH</option>
                             <option value="HFC">HFC</option>
                             <option value="WIRELESS">Wireless</option>
@@ -87,7 +86,7 @@
                     </div>
                     <div class="col-md-2">
                         <label for="agregarMonto" class="form-label">Monto</label>
-                        <input type="number" class="form-control" id="agregarMonto" required>
+                        <input type="number" class="form-control" value="" id="agregarMonto" required>
                     </div>
                     <div class="col-md-2 justify-content-center text-center">
                         <button id="agregarP" type="button" class="btn btn-primary">Agregar Proyecto</button>
@@ -96,32 +95,32 @@
     </section>
 
     <section id="eliminarProy">
-        <div class="container-fluid">
-        <h2>Eliminar Proyecto</h2>
-        <p>Para eliminar un proyecto, deberá ingresar el número, expediente y tipo de red</p>
+        <div class="container">
+            <h2>Eliminar Proyecto</h2>
+            <p>Para eliminar un proyecto, deberá ingresar el número, expediente y tipo de red</p>
         </div>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <form id="eliminarForm"action="#" method="GET" enctype="multipart/form-data" class="row ">
+                <form id="eliminarForm" action="#" method="GET" enctype="multipart/form-data" class="row ">
                     <div class="col-md-3">
-                        <label for="proyectNro" class="form-label">Número</label>
-                        <input type="text" class="form-control" id="proyectNro" required>
+                        <label for="eliminarNro" class="form-label">Número</label>
+                        <input type="number" class="form-control" id="eliminarNro" required>
                     </div>
                     <div class="col-md-3">
-                        <label for="proyectExp" class="form-label">Expediente</label>
-                        <input type="text" class="form-control" id="proyectExp" required>
+                        <label for="eliminarExp" class="form-label">Expediente</label>
+                        <input type="text" class="form-control" id="eliminarExp" required>
                     </div>
                     <div class="col-md-3">
-                        <label for="proyectRed" class="form-label">Tipo Red</label>
-                        <select class="form-select" id="proyectRed" required>
+                        <label for="eliminarRed" class="form-label">Tipo Red</label>
+                        <select class="form-select" id="eliminarRed" required>
                             <option selected>Seleccionar...</option>
-                            <option value="ftth">FTTH</option>
-                            <option value="hfc">HFC</option>
-                            <option value="wireless">Wireless</option>
+                            <option value="FTTH">FTTH</option>
+                            <option value="HFC">HFC</option>
+                            <option value="WIRELESS">Wireless</option>
                         </select>
                     </div>
                     <div class="col-md-3 text-center">
-                        <button id="eliminarP" type="submit" class="btn btn-primary">Eliminar Proyecto</button>
+                        <button id="eliminarP" type="button" class="btn btn-primary">Eliminar Proyecto</button>
                     </div>
                 </form>
     </section>

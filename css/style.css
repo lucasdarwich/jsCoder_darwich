@@ -44,12 +44,21 @@ nav ul li a:hover {
   color: rgb(95, 24, 24);
 }
 
-#agregarForm, #eliminarForm {
+#agregarForm,
+#eliminarForm {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
-#agregarProy {
+#agregarProy,
+#eliminarProy {
   margin-bottom: 50px;
+  margin-top: 15px;
+}
+
+#tablaProyectosConectividad h1 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }/*# sourceMappingURL=style.css.map */

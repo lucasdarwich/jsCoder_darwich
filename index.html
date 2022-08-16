@@ -2,69 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <!--Bootstrap-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <!-- Css propio -->
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Proyecto JS Coder - Lucas Darwich</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!--Bootstrap-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <!-- Css propio -->
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Proyecto JS Coder - Lucas Darwich</title>
 </head>
 
 <body>
-
-    <header class="bg-primary">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <nav class="bar">
-                        <span>MAG Track</span>
-                        <ul>
-                            <li type="button"><a href="#">Registrarse</li></a>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section id="login">
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-        <div class="row align-items-center g-lg-5 py-5">
-          <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 mb-3">Sistema de Seguimiento de Proyectos</h1>
-            <p class="col-lg-10 fs-4">El sistema brinda toda la información de los Poryectos de desplieuge de Fibra Óptica impulsados por nuestra empresa a lo largo de todo el territorio nacional. Se podran consultar tanto los montos como toda la información correspondiente a cada proyecto en ejecución.  </p>
-          </div>
-          <div class="col-md-10 mx-auto col-lg-5">
-            <form id="loginForm" class="p-4 p-md-5 border rounded-3 bg-light" action="./pages/proyectos.html">
-              <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="correo" placeholder="name@example.com">
-                <label for="correo">Correo Eléctronico</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-                <label for="password">Contraseña</label>
-              </div>
-             
-              <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
-              <hr class="my-4">
-              <small class="text-muted">Al iniciar sesión, usted acepta los terminos y condiciones.</small>
-            </form>
-          </div>
+  <header class="bg-primary">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="bar">
+            <span>MAG Track</span>
+            <ul>
+              <li type="button"><a href="#">FAQ</li></a>
+              <li type="button"><a href="#">Registrarse</li></a>
+            </ul>
+          </nav>
         </div>
       </div>
-    </section>
-    <footer>
-        
-    </footer>
-    <script src="./js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
-    </script>
+    </div>
+  </header>
+
+  <section id="login">
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+      <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+          <h1 class="display-4 fw-bold lh-1 mb-3">Sistema de Seguimiento de Proyectos</h1>
+          <p class="col-lg-10 fs-4">El sistema brinda toda la información de los Poryectos de desplieuge de Fibra Óptica
+            impulsados por nuestra empresa a lo largo de todo el territorio nacional. Se podran consultar tanto los
+            montos como toda la información correspondiente a cada proyecto en ejecución. </p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+          <form id="loginForm" class="p-4 p-md-5 border rounded-3 bg-light" action="./pages/proyectos.html">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="correo" placeholder="name@example.com">
+              <label for="correo">Correo Eléctronico</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="password" placeholder="Password">
+              <label for="password">Contraseña</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
+            <hr class="my-4">
+            <small class="text-muted">Al iniciar sesión, usted acepta los terminos y condiciones.</small>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+
+  </footer>
+
+  <script src="./js/login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

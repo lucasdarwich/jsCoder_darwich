@@ -48,11 +48,15 @@ botonAgregar.onmouseout = () => {
 }
 
 botonAgregar.onclick = () => {
-    console.log("Agregaste un proyecto");
-    cargarPproyectos();
-    dibujarTabla();
-    console.table(proyectos); 
-}  
+    if ((campoAgregarNro.value == "") || (campoAgregarExp.value == "") || (campoAgregarCliente.value == "") || (campoAgregarRed.value == "") || (campoAgregarMonto.value == "")) {
+        alert("Debe completar todos los capos")
+    } else {
+        cargarPproyectos();
+        console.log("Agregaste un proyecto");
+        dibujarTabla();
+        console.table(proyectos);
+    }
+}
 
 function dibujarTabla() {
     let tablaBody = document.getElementById("items");
@@ -79,4 +83,29 @@ botonEliminar.onmouseover = () => {
 }
 botonEliminar.onmouseout = () => {
     botonEliminar.className = "btn btn-primary";
+}
+
+let formularioEliminar = document.getElementById("eliminarForm");
+let campoEliminarNumero = document.getElementById("eliminarNro");
+let campoEliminarExp = document.getElementById("eliminarExp");
+let campoEliminarRed = document.getElementById("eliminarRed");
+
+campoEliminarNumero.onchange = () => {
+    eliminarNro = campoEliminarNumero.value;
+}
+campoEliminarExp.onchange = () => {
+    eliminarExp = campoEliminarExp.value;
+}
+campoEliminarRed.onchange = () => {
+    eliminarRed = campoEliminarRed.value;
+}
+
+botonEliminar.onclick = () => {
+    if ((campoEliminarNumero.value == "") || (campoEliminarExp.value == "") || (campoEliminarRed.value == "")) {
+        alert("Debe completar todos los capos")
+    } else
+        proyetosRestantes = proyectos.filter(proyecto => proyecto.nro != campoEliminarNumero.value);
+    proyectos.length = 0;
+    proyetosRestantes.forEach((proyetosRestantes) => proyectos.push(proyetosRestantes));
+    dibujarTabla();
 }
