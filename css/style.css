@@ -52,7 +52,8 @@ nav ul li a:hover {
 }
 
 #agregarProy,
-#eliminarProy {
+#eliminarProy,
+#faq {
   margin-bottom: 50px;
   margin-top: 15px;
 }
@@ -61,4 +62,31 @@ nav ul li a:hover {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+#tasadecambio {
+  margin-top: 20px;
+}
+#tasadecambio h4 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.bi-trash3, .bi-person, .bi-info-circle {
+  font-size: 10px;
+}
+
+#faq h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.bgl {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+.bgd {
+  background-color: #000000;
+  color: #f5f5f5;
 }/*# sourceMappingURL=style.css.map */

@@ -12,8 +12,9 @@ campoPass.onchange = () => {
 formulario.addEventListener("submit",validarForm);
 
 function validarForm(ev){
-    if((correo!="admin@magtrack.com")&&(password!="admin")){
+    if(((correo!="admin@magtrack.com")&&(password!="admin"))||((correo="")&&(password=""))){
         ev.preventDefault();
-        alert("Nombre de Usuario y/o Contraseña incorrectas");
+        errorLogin = document.getElementById("errorText");
+        errorLogin.innerText = "Usuario y/o contraseña incorrectos";
     }
 }

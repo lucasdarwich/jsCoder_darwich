@@ -15,7 +15,7 @@
   <title>Proyecto JS Coder - Lucas Darwich</title>
 </head>
 
-<body>
+<body class="bgl">
   <header class="bg-primary">
     <div class="container-fluid">
       <div class="row">
@@ -23,8 +23,8 @@
           <nav class="bar">
             <span>MAG Track</span>
             <ul>
-              <li type="button"><a href="#">FAQ</li></a>
-              <li type="button"><a href="#">Registrarse</li></a>
+              <li type="button"><a href="./pages/faq.html">FAQ</li></a>
+              <li type="button" ><a href="#">Registrarse</li></a>
             </ul>
           </nav>
         </div>
@@ -42,19 +42,20 @@
             montos como toda la información correspondiente a cada proyecto en ejecución. </p>
         </div>
         <div class="col-md-10 mx-auto col-lg-5">
-          <form id="loginForm" class="p-4 p-md-5 border rounded-3 bg-light" action="./pages/proyectos.html">
+          <form id="loginForm" class="p-4 p-md-5 border rounded-3 " action="./pages/proyectos.html">
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="correo" placeholder="name@example.com">
-              <label for="correo">Correo Eléctronico</label>
+              <label for="correo" id="mail">Correo Eléctronico</label>
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control" id="password" placeholder="Password">
-              <label for="password">Contraseña</label>
+              <label for="password" id="pass" >Contraseña</label>
+              <p id="errorText" class="text-muted"></p>
             </div>
 
             <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
             <hr class="my-4">
-            <small class="text-muted">Al iniciar sesión, usted acepta los terminos y condiciones.</small>
+            
           </form>
         </div>
       </div>

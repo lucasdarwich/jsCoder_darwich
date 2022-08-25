@@ -8,7 +8,7 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <!--Bootstrap-->
+    <!--Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- Css propio -->
     <link rel="stylesheet" href="../css/style.css">
@@ -24,8 +24,8 @@
                     <nav class="bar">
                         <span>MAG Track</span>
                         <ul>
-                            <li type="button"><a href="../pages/proyectos.html">Proyectos</li></a>
-                            <li type="button"><a href="#">Conversor</li></a>
+                            <li type="button"><a href="./proyectos.html">Proyectos</li></a>
+                            <li type="button"><a href="./cotizador.html">Conversor</li></a>
                             <li type="button"><a href="../index.html">Logout</li></a>
                         </ul>
                     </nav>
@@ -33,6 +33,7 @@
             </div>
         </div>
     </header>
+
     <section id="tablaProyectosConectividad">
         <div class="container ">
             <h1>Listado de Proyectos</h1>
@@ -47,88 +48,148 @@
                                     <th>Cliente</th>
                                     <th>Tipo Red</th>
                                     <th>Monto</th>
+                                    <th>Acción</th>
                                 </tr>
                             </thead>
                             <tbody id="items">
 
                             </tbody>
                         </table>
+                        <button id="btn-modal-agregar" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#addProyectoModal">Agregar Proyecto</button>
                     </div>
                 </div>
             </div>
     </section>
-    <section id="agregarProy">
-        <div class="container">
-            <h2>Agregar Proyecto</h2>
-            <p>Deberá ingresar los siguientes datos para agregar un proyecto</p>
-            <div class="row">
-                <form id="agregarForm" method="GET" enctype="multipart/form-data" class="row g-3" action="">
-                    <div class="col-md-1">
-                        <label for="agregarNro" class="form-label">Número</label>
-                        <input type="number" class="form-control" value="" id="agregarNro" required>
+    <section>
+        <!-- Modal Agregar Proyectos-->
+        <div class="modal fade" id="addProyectoModal" tabindex="-1" aria-labelledby="addProyectoModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addProyectoModal">Agregar Proyecto</h5>
+                        <button id="cerrarModal" type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
-                    <div class="col-md-3">
-                        <label for="agregarExp" class="form-label">Expediente</label>
-                        <input type="text" class="form-control" value="" id="agregarExp" required>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <p><b>Ingresar los siguientes datos para agregar un proyecto</b></p>
+                            <div class="row">
+                                <form id="agregarForm" method="GET" enctype="multipart/form-data" class="row g-2"
+                                    action="">
+                                    <div class="col-md-1">
+                                        <label for="agregarNro" class="form-label">Número</label>
+                                        <input type="number" class="form-control" value="" id="agregarNro" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="agregarExp" class="form-label">Expediente</label>
+                                        <input type="text" class="form-control" value="" id="agregarExp" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="agregarClient" class="form-label">Cliente</label>
+                                        <input type="text" class="form-control" value="" id="agregarClient" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="agregarRed" class="form-label">Tipo Red</label>
+                                        <select class="form-select" id="agregarRed" type="text" required>
+                                            <option selected value="">Seleccionar...</option>
+                                            <option value="FTTH">FTTH</option>
+                                            <option value="HFC">HFC</option>
+                                            <option value="WIRELESS">Wireless</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label for="agregarMonto" class="form-label">Monto</label>
+                                        <input type="number" class="form-control" value="" id="agregarMonto" required>
+                                    </div>
+                                    <div>
+                                    </div>
+                                    <p><b>Responsable de Ingeniería</b></p>
+                                    <div class="col-md-4">
+                                        <label for="agregarIngeniero" class="form-label">Nombre y Apellido</label>
+                                        <input type="text" class="form-control" value="" id="agregarIngeniero" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="agregarTel" class="form-label">Teléfono</label>
+                                        <input type="number" class="form-control" value="" id="agregarTel" required>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="agregarCorreo" class="form-label">Correo</label>
+                                        <input type="text" class="form-control" value="" id="agregarCorreo" required>
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button id="agregarP" type="button" class="btn btn-primary">Agregar Proyecto</button>
+                            </div>
+                            <p id="parrafoAgregarProyecto"> </p>
+
+                            </form>
+
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <label for="agregarClient" class="form-label">Cliente</label>
-                        <input type="text" class="form-control" value="" id="agregarClient" required>
-                    </div>
-                    <div class="col-md-2">
-                        <label for="agregarRed" class="form-label">Tipo Red</label>
-                        <select class="form-select" id="agregarRed" type="text" required>
-                            <option selected value="">Seleccionar...</option>
-                            <option value="FTTH">FTTH</option>
-                            <option value="HFC">HFC</option>
-                            <option value="WIRELESS">Wireless</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                        <label for="agregarMonto" class="form-label">Monto</label>
-                        <input type="number" class="form-control" value="" id="agregarMonto" required>
-                    </div>
-                    <div class="col-md-2 justify-content-center text-center">
-                        <button id="agregarP" type="button" class="btn btn-primary">Agregar Proyecto</button>
-                    </div>
-                </form>
+                </div>
+                <!-- Fin Modal Agregar Proyectos-->
     </section>
 
-    <section id="eliminarProy">
-        <div class="container">
-            <h2>Eliminar Proyecto</h2>
-            <p>Para eliminar un proyecto, deberá ingresar el número, expediente y tipo de red</p>
+    <section>
+
+        <!--  Modal Eliminar Proyectos-->
+        <div class="modal fade" id="suprProyectoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Proyecto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="cuerpoModal" class="modal-body">
+
+                    </div>
+                    <div id="pieModal" class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <form id="eliminarForm" action="#" method="GET" enctype="multipart/form-data" class="row ">
-                    <div class="col-md-3">
-                        <label for="eliminarNro" class="form-label">Número</label>
-                        <input type="number" class="form-control" id="eliminarNro" required>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="eliminarExp" class="form-label">Expediente</label>
-                        <input type="text" class="form-control" id="eliminarExp" required>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="eliminarRed" class="form-label">Tipo Red</label>
-                        <select class="form-select" id="eliminarRed" required>
-                            <option selected>Seleccionar...</option>
-                            <option value="FTTH">FTTH</option>
-                            <option value="HFC">HFC</option>
-                            <option value="WIRELESS">Wireless</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <button id="eliminarP" type="button" class="btn btn-primary">Eliminar Proyecto</button>
-                    </div>
-                </form>
+
     </section>
+    <!--  Fin Modal Eliminar Proyectos-->
+
+    <section>
+
+        <!--  Modal Datos Ingeniero-->
+        <div class="modal fade" id="datosIng" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Responsable de Ingeniería</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="cuerpoModalIng" class="modal-body">
+
+                    </div>
+                    <div id="pieModalIng" class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
     <footer>
 
     </footer>
-    <script src="../js/proyectos.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
+    <script src="../js/proyectos.js"></script>
+
 </body>
+
+</html>
