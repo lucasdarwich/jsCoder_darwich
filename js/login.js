@@ -12,7 +12,7 @@ campoPass.onchange = () => {
 formulario.addEventListener("submit",validarForm);
 
 function validarForm(ev){
-    if(((correo!="admin@magtrack.com")&&(password!="admin"))||((correo="")&&(password=""))){
+    if(((correo!="admin@magtrack.com")||(password!="admin"))||((correo="")&&(password=""))){
         ev.preventDefault();
         errorLogin = document.getElementById("errorText");
         errorLogin.innerText = "Usuario y/o contraseña incorrectos";
