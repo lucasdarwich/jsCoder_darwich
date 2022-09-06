@@ -58,7 +58,7 @@ nav ul li a:hover {
   margin-top: 15px;
 }
 
-#tablaProyectosConectividad h1 {
+#tablaProyectosConectividad h1, #tablaDolar h1 {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 15px;
