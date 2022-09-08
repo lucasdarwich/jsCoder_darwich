@@ -1,15 +1,15 @@
-
 let campoTasaCambio = document.getElementById("tasaIngresada");
 let campoPesos = document.getElementById("ingresarPesos");
 let botonCalculoUsd = document.getElementById("calculoUsd");
-let campoDolares = document.getElementById("ingresarDolares") ; 
+let campoDolares = document.getElementById("ingresarDolares");
 let botonCalculoArs = document.getElementById("calculoArs");
 
 ultimaTc = localStorage.getItem("valortc");
 
-if(ultimaTC =! null) {    
+if (ultimaTC = !null) {
     campoTasaCambio.value = ultimaTc;
 }
+
 campoTasaCambio.onchange = () => {
     tasaDeCambio = campoTasaCambio.value;
     localStorage.setItem("valortc", tasaDeCambio);
@@ -17,50 +17,46 @@ campoTasaCambio.onchange = () => {
 
 campoPesos.onchange = () => {
     pesosArgentinos = campoPesos.value;
-    console.log(pesosArgentinos);
 }
 
 botonCalculoUsd.onclick = () => {
     resultadoUsd = document.getElementById("resultadoUsd");
-    resultadoUsd.value = (pesosArgentinos/campoTasaCambio.value).toFixed(2);
+    resultadoUsd.value = (pesosArgentinos / campoTasaCambio.value).toFixed(2);
 }
 
 campoDolares.onchange = () => {
     dolares = campoDolares.value;
-    console.log(dolares); 
 }
 
 botonCalculoArs.onclick = () => {
     resultadoArs = document.getElementById("resultadoArs");
-    resultadoArs.value = (dolares*campoTasaCambio.value).toFixed(2);
+    resultadoArs.value = (dolares * campoTasaCambio.value).toFixed(2);
 }
 
-//una vez que se carga la pagina se ejecuta la función
-window.onload=()=>{
+//una vez que se carga la pagina se ejecuta la función obtenerDolar()
+window.onload = () => {
     obtenerDolar();
 }
 
-// función que obtiene distintos tipos de valor de USD y renderiza la tabla
+// obtenemos los distintos tipos de valor de USD y renderiza la tabla de referencia
 async function obtenerDolar() {
     const DOLAROFICIAL = "https://api-dolar-argentina.herokuapp.com/api/dolaroficial";
-    const respOficial=await fetch(DOLAROFICIAL)
-    const dataOficial=await respOficial.json()
+    const respOficial = await fetch(DOLAROFICIAL)
+    const dataOficial = await respOficial.json()
     const DOLARBLUE = "https://api-dolar-argentina.herokuapp.com/api/dolarblue";
-    const respBlue=await fetch(DOLARBLUE)
-    const dataBlue=await respBlue.json()
+    const respBlue = await fetch(DOLARBLUE)
+    const dataBlue = await respBlue.json()
     const DOLARBOLSA = "https://api-dolar-argentina.herokuapp.com/api/dolarbolsa";
-    const respBolsa=await fetch(DOLARBOLSA)
-    const dataBolsa=await respBolsa.json()
+    const respBolsa = await fetch(DOLARBOLSA)
+    const dataBolsa = await respBolsa.json()
     const DOLARBBVA = "https://api-dolar-argentina.herokuapp.com/api/bbva";
-    const respBbva=await fetch(DOLARBBVA)
-    const dataBbva=await respBbva.json() 
+    const respBbva = await fetch(DOLARBBVA)
+    const dataBbva = await respBbva.json()
     const DOLARGALICIA = "https://api-dolar-argentina.herokuapp.com/api/galicia";
-    const respGalicia=await fetch(DOLARGALICIA)
-    const dataGalicia=await respGalicia.json()
+    const respGalicia = await fetch(DOLARGALICIA)
+    const dataGalicia = await respGalicia.json()
 
-
-    
-    document.getElementById("itemsDolar").innerHTML+=(`
+    document.getElementById("itemsDolar").innerHTML += (`
     <tr>
     <td> Dolar Oficial</td>
     <td>${dataOficial.compra}</td>
@@ -87,6 +83,6 @@ async function obtenerDolar() {
     </tr> 
     `);
 
-    document.getElementById("fechaTasaCambio").innerHTML+=(`
+    document.getElementById("fechaTasaCambio").innerHTML += (`
     Fecha: ${dataOficial.fecha}`);
 }

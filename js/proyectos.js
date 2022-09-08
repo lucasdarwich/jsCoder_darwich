@@ -97,11 +97,15 @@ dibujarTabla();
 dibujarModal();
 dibujarModalEncargado();
 
+//Función de carga de proyectos
+
 function cargarPproyectos() {
     proyectos.push(new Proyecto(agregarNro, agregarExp, agregarClient, agregarRed, agregarMonto, agregarIng, agregarTel, agregarCorreo));
 }
 
 let btnArgegarModal = document.getElementById("btn-modal-agregar");
+
+//Eventos
 
 btnArgegarModal.onmouseover = () => {
     btnArgegarModal.className = "btn btn-success";
@@ -187,6 +191,8 @@ btnArgegarModal.onclick = () => {
     }
 }
 
+//Función - Dibuja la tabla de proyectos cargados. 
+
 function dibujarTabla() {
     let tablaBody = document.getElementById("items");
     tablaBody.innerHTML = "";
@@ -215,6 +221,8 @@ let pieModal = document.getElementById("pieModal");
 pieModal.innerHTML = "";
 let modalIng = document.getElementById("cuerpoModalIng");
 modalIng.innerHTML = "";
+
+//Función - Dibuja el modal que muestra los datos del proyecto. 
 
 function dibujarModal() {
     proyectos.forEach(
@@ -276,6 +284,7 @@ function dibujarModal() {
     );
 }
 
+//Función - Dibuja el modal que muestra los datos del encargado de la ingenieria del proyecto. 
 function dibujarModalEncargado() {
     proyectos.forEach(
         (proyecto) => {
